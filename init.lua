@@ -1,5 +1,2 @@
-require(   "jainil" )
-require'lspconfig'.biome.setup{}
-
-
-
+    require("jainil")
+require 'lspconfig'.biome.setup {}
