@@ -2,6 +2,10 @@ require("conform").setup({
 	formatters_by_ft = {
 		lua = { "stylua" },
 		javascript = { "biome" },
+		typescript = { "biome" },
+		typescriptreact = { "biome" },
+		javascriptreact = { "prettier" },
+		go = { "gofmt", "goimports" },
 	},
 })
 vim.api.nvim_create_autocmd("BufWritePre", {
