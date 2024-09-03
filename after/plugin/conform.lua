@@ -6,6 +6,7 @@ require("conform").setup({
 		typescriptreact = { "biome" },
 		javascriptreact = { "prettier" },
 		go = { "gofmt", "goimports" },
+		rust = { "rustfmt" },
 	},
 })
 vim.api.nvim_create_autocmd("BufWritePre", {

@@ -69,6 +69,27 @@ require("mason-lspconfig").setup({
 		end,
 	},
 })
+require("mason-lspconfig").setup_handlers({
+	function(server_name)
+		require("lspconfig")[server_name].setup({})
+	end,
+	["tsserver"] = function()
+		require("lspconfig").tsserver.setup({
+			settings = {
+				javascript = {
+					inlayHints = {
+						includeInlayParameterNameHints = "all",
+						includeInlayParameterNameHintsWhenArgumentMatchesName = true,
+						includeInlayFunctionParameterTypeHints = true,
+						includeInlayPropertyDeclarationTypeHints = true,
+						includeInlayFunctionLikeReturnTypeHints = true,
+						includeInlayEnumMemberValueHints = true,
+					},
+				},
+			},
+		})
+	end,
+})
 
 local cmp = require("cmp")
 local cmp_select = { behavior = cmp.SelectBehavior.Select }
@@ -84,6 +105,7 @@ cmp.setup({
 		{ name = "luasnip", keyword_length = 2 },
 		{ name = "buffer", keyword_length = 3 },
 	},
+	preselect = cmp.PreselectMode.None,
 	mapping = cmp.mapping.preset.insert({
 		["<C-p>"] = cmp.mapping.select_prev_item(cmp_select),
 		["<C-n>"] = cmp.mapping.select_next_item(cmp_select),

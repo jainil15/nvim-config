@@ -140,6 +140,11 @@ _G.packer_plugins = {
     path = "/home/jainil/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
     url = "https://github.com/lewis6991/gitsigns.nvim"
   },
+  harpoon = {
+    loaded = true,
+    path = "/home/jainil/.local/share/nvim/site/pack/packer/start/harpoon",
+    url = "https://github.com/ThePrimeagen/harpoon"
+  },
   ["indent-blankline.nvim"] = {
     loaded = true,
     path = "/home/jainil/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
@@ -267,6 +272,11 @@ _G.packer_plugins = {
     path = "/home/jainil/.local/share/nvim/site/pack/packer/opt/vim-jsdoc",
     url = "https://github.com/heavenshell/vim-jsdoc"
   },
+  ["vscode-monokaicharcoal"] = {
+    loaded = true,
+    path = "/home/jainil/.local/share/nvim/site/pack/packer/start/vscode-monokaicharcoal",
+    url = "https://github.com/74th/vscode-monokaicharcoal"
+  },
   ["zen-mode.nvim"] = {
     loaded = true,
     path = "/home/jainil/.local/share/nvim/site/pack/packer/start/zen-mode.nvim",
@@ -287,9 +297,9 @@ vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Filetype lazy-loads
 time([[Defining lazy-load filetype autocommands]], true)
+vim.cmd [[au FileType javascript.jsx ++once lua require("packer.load")({'vim-jsdoc'}, { ft = "javascript.jsx" }, _G.packer_plugins)]]
 vim.cmd [[au FileType typescript ++once lua require("packer.load")({'vim-jsdoc'}, { ft = "typescript" }, _G.packer_plugins)]]
 vim.cmd [[au FileType javascript ++once lua require("packer.load")({'vim-jsdoc'}, { ft = "javascript" }, _G.packer_plugins)]]
-vim.cmd [[au FileType javascript.jsx ++once lua require("packer.load")({'vim-jsdoc'}, { ft = "javascript.jsx" }, _G.packer_plugins)]]
 time([[Defining lazy-load filetype autocommands]], false)
   -- Event lazy-loads
 time([[Defining lazy-load event autocommands]], true)
