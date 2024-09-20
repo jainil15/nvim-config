@@ -89,6 +89,23 @@ require("mason-lspconfig").setup_handlers({
 			},
 		})
 	end,
+	["gopls"] = function()
+		require("lspconfig").gopls.setup({
+			settings = {
+				gopls = {
+					hints = {
+						assignVariableTypes = true,
+						compositeLiteralFields = true,
+						compositeLiteralTypes = true,
+						constantValues = true,
+						functionTypeParameters = true,
+						parameterNames = true,
+						rangeVariableTypes = true,
+					},
+				},
+			},
+		})
+	end,
 })
 
 local cmp = require("cmp")
