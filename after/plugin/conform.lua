@@ -5,8 +5,10 @@ require("conform").setup({
 		typescript = { "biome" },
 		typescriptreact = { "biome" },
 		javascriptreact = { "prettier" },
-		go = { "gofmt", "goimports" },
+		go = { "gofumpt", "golines", "goimports" },
 		rust = { "rustfmt" },
+		sql = { "sql-formatter" },
+		cpp = { "clang-format" },
 	},
 })
 vim.api.nvim_create_autocmd("BufWritePre", {

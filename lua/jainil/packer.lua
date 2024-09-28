@@ -12,14 +12,8 @@ return require("packer").startup(function(use)
 		-- or                            , branch = '0.1.x',
 		requires = { { "nvim-lua/plenary.nvim" } },
 	})
-	use({
-
-		"rose-pine/neovim",
-		as = "rose-pine",
-	})
 	use({ "catppuccin/nvim", as = "catppuccin" })
 	use("nvim-treesitter/nvim-treesitter", { run = ":TSUpdate" })
-	use({ "bluz71/vim-moonfly-colors", as = "moonfly" })
 	use("mbbill/undotree")
 	use("tpope/vim-fugitive")
 	use({
@@ -93,7 +87,6 @@ return require("packer").startup(function(use)
 	use("nvim-treesitter/nvim-treesitter-context")
 
 	use("lewis6991/gitsigns.nvim")
-	use("folke/tokyonight.nvim")
 	use("stevearc/conform.nvim")
 	use({
 		"kdheepak/lazygit.nvim",
@@ -107,4 +100,10 @@ return require("packer").startup(function(use)
 		branch = "harpoon2",
 		requires = { { "nvim-lua/plenary.nvim" } },
 	})
+	-- Colorschemes
+	use({ "olimorris/onedarkpro.nvim", as = "onedarkpro" })
+	use({ "bluz71/vim-moonfly-colors", as = "moonfly" })
+	use({ "rose-pine/neovim", as = "rose-pine" })
+	use("folke/tokyonight.nvim")
+	use({ "ellisonleao/gruvbox.nvim", as = "gruvbox" })
 end)
