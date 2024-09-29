@@ -106,4 +106,9 @@ return require("packer").startup(function(use)
 	use({ "rose-pine/neovim", as = "rose-pine" })
 	use("folke/tokyonight.nvim")
 	use({ "ellisonleao/gruvbox.nvim", as = "gruvbox" })
+	-- Status Bar
+	use({
+		"nvim-lualine/lualine.nvim",
+		requires = { "nvim-tree/nvim-web-devicons", opt = true },
+	})
 end)
