@@ -28,6 +28,7 @@ return {
 					floats = "transparent",
 				},
 			})
+			ColorMyPencils()
 		end,
 	},
 	{
