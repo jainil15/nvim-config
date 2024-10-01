@@ -1,3 +1,4 @@
+
 vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>ft", "<cmd>Neotree right<CR>")
 vim.keymap.set("n", "<C-s>", vim.cmd.LspZeroFormat)

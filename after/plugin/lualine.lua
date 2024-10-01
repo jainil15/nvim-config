@@ -1,8 +1,0 @@
--- -- Lua
--- require("lualine").setup({
--- 	options = {
--- 		section_separators = { left = "", right = "" },
--- 		component_separators = { left = "", right = "" },
--- 		sections = { lualine_c = { "%=", "%t%m", "%3p" }, lualine_a = { "FugitiveHead" } },
--- 	},
--- })
