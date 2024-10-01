@@ -1,3 +1,2 @@
-require("jainil.remap")
-require("jainil.packer")
-require("jainil.set")
+require("jainil.core")
+require("jainil.lazy")
