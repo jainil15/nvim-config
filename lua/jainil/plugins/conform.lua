@@ -12,7 +12,7 @@ return {
 				rust = { "rustfmt" },
 				sql = { "sql-formatter" },
 				cpp = { "clang-format" },
-			},
+        templ = {"templ"} },
 		})
 		vim.api.nvim_create_autocmd("BufWritePre", {
 			pattern = "*",

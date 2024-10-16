@@ -33,3 +33,6 @@ require("lazy").setup({
 	-- automatically check for plugin updates
 	checker = { enabled = false },
 })
+require("cmp").setup({
+  formatting = { format = require("tailwindcss-colorizer-cmp").formatter },
+})
