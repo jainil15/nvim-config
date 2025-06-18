@@ -6,13 +6,16 @@ return {
 				lua = { "stylua" },
 				javascript = { "biome" },
 				typescript = { "biome" },
+				json = { "biome" },
 				typescriptreact = { "biome" },
-				javascriptreact = { "prettier" },
+				javascriptreact = { "biome" },
 				go = { "gofumpt", "golines", "goimports" },
 				rust = { "rustfmt" },
 				sql = { "sql-formatter" },
 				cpp = { "clang-format" },
-        templ = {"templ"} },
+        templ = {"templ"},
+        c = {"clang-format"},
+      },
 		})
 		vim.api.nvim_create_autocmd("BufWritePre", {
 			pattern = "*",
