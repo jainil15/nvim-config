@@ -27,13 +27,11 @@ return {
 			cmp_lsp.default_capabilities()
 		)
 
+
 		require("mason-lspconfig").setup({
 			ensure_installed = {
 				"lua_ls",
-				"rust_analyzer",
-				"gopls",
-			},
-			handlers = {
+				"rust_analyzer", "gopls" }, handlers = {
 				function(server_name) -- default handler (optional)
 					require("lspconfig")[server_name].setup({
 						capabilities = capabilities,
@@ -70,8 +68,28 @@ return {
 						},
 					})
 				end,
-			},
-		})
+
+        ["ts_ls"] = function()
+          require("lspconfig").ts_ls.setup({
+            capabilities = capabilities,
+            settings = {
+              tsserver = {
+                filetypes = { "typescript", "typescriptreact", "typescript.tsx", "javascript", "javascriptreact" },
+              },
+            },
+            cmd = {
+              "node",
+              "--max-old-space-size=4096",
+              "typescript-language-server",
+              "--stdio",
+              "--log-level", "4",
+              "--tsserver-log-file", "/home/jainil/.cache/nvim/tsserver.log",
+
+            },
+          })
+        end,
+      },
+    })
 
 		local cmp_select = { behavior = cmp.SelectBehavior.Select }
 
@@ -88,7 +106,7 @@ return {
 			mapping = cmp.mapping.preset.insert({
 				["<C-p>"] = cmp.mapping.select_prev_item(cmp_select),
 				["<C-n>"] = cmp.mapping.select_next_item(cmp_select),
-				["<C-<CR>>"] = cmp.mapping.confirm({ select = false }),
+				["<CR>"] = cmp.mapping.confirm({ select = false }),
 				["<C-Space>"] = cmp.mapping.complete(),
 			}),
 			sources = cmp.config.sources({

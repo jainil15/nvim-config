@@ -1,5 +1,6 @@
 function ColorMyPencils(color)
-	color = color or "tokyonight-night" -- default color scheme
+	color = color or "rose-pine-moon" -- default color scheme
+  -- color = color or "rose-pine-main"
 	vim.cmd.colorscheme(color)
 	vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
 	vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
@@ -32,16 +33,23 @@ return {
 		end,
 	},
 	{
-		"rose-pine/neovim",
-		name = "rose-pine",
-		config = function()
-			require("rose-pine").setup({
-				disable_background = true,
-				styles = {
-					italic = false,
-				},
-			})
+    "rose-pine/neovim",
+    name = "rose-pine",
+    config = function()
+      require("rose-pine").setup({
+        variant = "auto", -- auto, main, moon, or dawn
+        dark_variant = "moon", -- main, moon, or dawn
+        dim_inactive_windows = true,
+        extend_background_behind_borders = true,
+        disable_background = true,
+        styles = {
+          bold = true,
+          italic = false,
+          transparency = true,
+        },
+      })
 		end,
 	},
 	{ "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+
 }
